@@ -10,6 +10,8 @@ public class Main {
         System.out.println(con.getBean("pb1"));
         System.out.println();
         System.out.println(con.getBean("cheque"));
+        System.out.println();
+        System.out.println(con.getBean("carton"));
 
     }
 }
