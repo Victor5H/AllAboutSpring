@@ -1,4 +1,4 @@
-package lifeCycleXML;
+package lifeCycle;
 
 public class PiggyBank {
     private int money;
@@ -12,7 +12,7 @@ public class PiggyBank {
     }
 
     public void init(){
-        System.out.println("init");
+        System.out.println("piggy bank safe");
     }
     public void destroy(){
         System.out.println("piggy bank destroyed");
