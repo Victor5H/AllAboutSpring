@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Using P schema-->
+    <bean id="agent" class="xmlBased.Agent"
+          p:name="Harshit"
+          p:id="007">
+        <!--this will look for one constructor with both arguments-->
+        <constructor-arg name="address">
+            <list>
+                <ref bean="address1"/>
+            </list>
+        </constructor-arg>
+        <constructor-arg name="guns" type="Set">
+            <set>
+                <value>AK47</value>
+            </set>
+        </constructor-arg>
+        <constructor-arg name="ammunition">
+            <map>
+                <entry key="AK47" value="40"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean name="maya" class="xmlBased.Agent">
+        <property name="name" value="Maya"/>
+        <property name="id" value="008"/>
+
+        <property name="address">
+            <list>
+                <ref bean="address1"/>
+                <ref bean="address2"/>
+            </list>
+        </property>
+
+        <property name="guns">
+            <set>
+                <value>AK47</value>
+                <value>M249</value>
+            </set>
+        </property>
+        <property name="ammunition">
+            <map>
+                <entry key="Ak47" value="40"/>
+                <entry key="M249" value="100"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean name="address1" class="xmlBased.Address">
+        <constructor-arg name="city" value="NGP"/>
+        <constructor-arg name="country" value="IND"/>
+    </bean>
+
+    <bean id="address2" class="xmlBased.Address">
+        <constructor-arg name="city" value="Pune"/>
+        <constructor-arg name="country" value="IND"/>
+    </bean>
+
+</beans>
